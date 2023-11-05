@@ -1,7 +1,10 @@
 {
     "name": "alunos-senac/projeto-integrador",
     "scripts": {
-        "dev": "php -S localhost:3001"
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:3001"
+        ]
     },
     "type": "project",
     "authors": [
