@@ -6,18 +6,19 @@
   <title>Document</title>
 </head>
 <body>
+  <button onclick="onConnectDB()">Chamar</button>
   <?php
+  
   function onConnectDB() {
   $password = $_ENV['MYSQL_ROOT_PASSWORD'];
-  try {
-    $db = new PDO('mysql:host=viaduct.proxy.rlwy.net;dbname=railway', 'root', $password);
-    echo 'Banco de dados acessado com sucesso';
-  } catch (PDOException $e){
-    echo $e;
-  }
-  }
-
-  echo '<button onclick="onConnectDB()">Chamar</button>';
+  echo $password;
+  // try {
+  //   $db = new PDO('mysql:host=viaduct.proxy.rlwy.net;dbname=railway', 'root', $password);
+  //   echo 'Banco de dados acessado com sucesso';
+  // } catch (PDOException $e){
+  //   echo $e;
+  // }
+}
 ?>
 </body>
 </html>
