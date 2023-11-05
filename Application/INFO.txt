@@ -1,24 +1,70 @@
-Para rodar a aplicação localmente será necessário baixar as seguintes ferramentas: 
+Para rodar a aplicação localmente será necessário baixar as seguintes ferramentas:
 
-**PHP**
+(Com XAMPP ou AMP) {
+  Basta baixar um desses aplicativos de servidor, que irá conter as configurações para o PHP e banco de dados,
+  porém pesquise se irá precisar configurar algo para o PHP no aplicativo que vc escolheu,
+  e é indicado instalar o aplicativo MySql workbench pra mexer melhor no banco de dados;
+}
+
+** PHP **
 (Sem XAMPP ou AMP) {
   - Baixe o PHP diretamente do site que corresponde com seu SO;
   - Escolha um caminho de destino onde vai ficar a pasta do PHP, e guarde para si o caminho da pasta onde contem o arquivo php.exe, por exemplo "C:/Users/YOU/Documents/php8";
   - Vá em variáveis de ambiente do seu SO, pelo windows é só pesquisar por 'variáveis de ambiente', procure as váriaveis de ambiente do seu usuário e selecione a variável PATH, nela cole o caminho que vc escolheu para o PHP;
   - Reinicie seu computador;
   - Agora verifique se foi instalado corretamente digitando no prompt de comando 'php -v', se aparecer as informações do php é pq a instalação deu certo;
-  - Para rodar a aplicação entre na pasta Application do projeto pelo terminal e digite 'php -S localhost:3001';
+  - Na pasta do php, vá no arquivo 'php.ini-development', crie uma cópia dele e renomeie ele para 'php.ini', verifique se a extensão tbm mudou para somente arquivo ini,
+  após isso vc irá precisar descomentar duas linhas nesse arquivo, essas duas linhas são mostradas no video abaixo onde instala o MySQL,
+  após descomentar essas duas linhas, rode o projeto e use a função 'phpInfo()' no index arquivo, acesse o projeto na web pelo servidor iniciado, irá aparecer as informações do php, 
+  procure pela tabela PDO, nela a opção enabled deve aparecer mysql;
+  - Siga para a instalação do composer abaixo;
 }
 
-(Com XAMPP ou AMP) {
-  Basta baixar o aplicativo de servidor, que irá conter as configurações para o PHP, pesquise se irá precisar configurar algo para o PHP no aplicativo que vc escolheu;
+///////////////////////////////////////////////////////////////
+
+*** MYSQL ***
+(Sem XAMPP ou AMP) {
+  - Baixe o MySQL server e MySQL workbench e configure o ambiente - https://www.youtube.com/watch?v=IeTbZOxEwGc&ab_channel=TekZoom
+  - Evite criar uma conta de usuário, use o acesso root por padrão;
+  - Crie uma senha e lembre dela pra acessar depois;
+  - Deixe na porta 3306 por padrão;
+  - Após criar o servidor de banco de dados, acesse ele através do workbench, dentro do workbench crie um schema chamado 'railway', vai ser nele que vc vai trabalhar;
+  - No workbench vá na aba server, e selcione import data, selecione o aqruvio sql na pasta database_backup desse projeto, o seu banco de dados local vai atualizar com os dados 
+  do repositório;
 }
 
 ////////////////////////////////////////////////////////////////
 
-**COMPOSER**
+** COMPOSER **
 O composer será um gerenciador de pacotes que vamos utilizar para baixar algumas dependências
 
 - Acesse o site https://getcomposer.org/doc/00-intro.md e instale o composer na sua máquina de acordo com seu SO;
-- Reinicie seu editor de código ou terminal de comando;
+- Reinicie seu editor de código ou terminal de comando, e verifique se foi instalado corretamente digitando 'composer';
 - No terminal dentro da pasta Application, digite 'composer install' para instalar as dependências;
+
+////////////////////////////////////////////////////////////////
+
+
+*** .ENV *** 
+- Após esses passos citados acima, crie o arquivo '.env' na pasta Application, nesse arquivo criado coloque as seguintes informações: 
+
+MYSQL_ROOT_PASSWORD=(Aqui vocÊ coloca a senha de acesso do servidor de banco de dados que vc criou entre aspas, exemplo '12345');
+MYSQLHOST="localhost"
+MYSQLUSER='root'
+MYSQLPORT='3306'
+MYSQLDATABASE='railway'
+
+////////////////////////////////////////////////////////////////
+
+*** AVISOS ***
+
+Após estas instalações e configurações você já pode trabalhar no projeto;
+Caso você não esteja usando o XAMPP ou AMP, para rodar a aplicação você precisar navegar para o projeto pelo terminal dentro da pasta Application,
+e então no terminal digite 'composer dev', o projeto irá rodar localmente e a porta irá mostrar no terminal, você conseguirá acessar pela web localmente;
+
+Toda alteração que for feita, não faça diretamente na branch main, crie outra branch através da main ATUALIZADA, nessa sua branch faça as alterações e suba para o repositório remoto, 
+crie uma Pull Request, para ser avaliado e se aprovado será feito o merge com a branch principal;
+
+Para quem for mexer no banco de dados é bom usar o app workbench, acesse seu servidor local, importe o arquivo sql do projeto e pode adicionar e mexer nas tabelas,
+sempre que fizer alterações, não esqueça de primeiro atualizar o seu repositório local com o repositório remoto, importar o arquivo sql para o workbench, 
+faça as suas alterações e depois exporte o schema que vc alterou e substitua pelo schema que está na pasta do repositório, e não esqueça de subir suas alterações para o repositório remoto 
