@@ -6,7 +6,6 @@
   <title>Document</title>
 </head>
 <body>
-  <button onclick="onConnectDB()">Chamar</button>
   <?php
   
   function onConnectDB() {
@@ -18,7 +17,8 @@
   // } catch (PDOException $e){
   //   echo $e;
   // }
-}
+  }
+  echo '<button onclick="onConnectDB()">Chamar</button>';
 ?>
 </body>
 </html>
