@@ -1,0 +1,24 @@
+Para rodar a aplicação localmente será necessário baixar as seguintes ferramentas: 
+
+**PHP**
+(Sem XAMPP ou AMP) {
+  - Baixe o PHP diretamente do site que corresponde com seu SO;
+  - Escolha um caminho de destino onde vai ficar a pasta do PHP, e guarde para si o caminho da pasta onde contem o arquivo php.exe, por exemplo "C:/Users/YOU/Documents/php8";
+  - Vá em variáveis de ambiente do seu SO, pelo windows é só pesquisar por 'variáveis de ambiente', procure as váriaveis de ambiente do seu usuário e selecione a variável PATH, nela cole o caminho que vc escolheu para o PHP;
+  - Reinicie seu computador;
+  - Agora verifique se foi instalado corretamente digitando no prompt de comando 'php -v', se aparecer as informações do php é pq a instalação deu certo;
+  - Para rodar a aplicação entre na pasta Application do projeto pelo terminal e digite 'php -S localhost:3001';
+}
+
+(Com XAMPP ou AMP) {
+  Basta baixar o aplicativo de servidor, que irá conter as configurações para o PHP, pesquise se irá precisar configurar algo para o PHP no aplicativo que vc escolheu;
+}
+
+////////////////////////////////////////////////////////////////
+
+**COMPOSER**
+O composer será um gerenciador de pacotes que vamos utilizar para baixar algumas dependências
+
+- Acesse o site https://getcomposer.org/doc/00-intro.md e instale o composer na sua máquina de acordo com seu SO;
+- Reinicie seu editor de código ou terminal de comando;
+- No terminal dentro da pasta Application, digite 'composer install' para instalar as dependências;
