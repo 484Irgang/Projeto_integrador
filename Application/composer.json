@@ -3,7 +3,7 @@
     "scripts": {
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "php -S localhost:3001"
+            "php -S localhost:3001 -t public"
         ]
     },
     "type": "project",
@@ -14,5 +14,13 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "files": [
+            "app/router/router.php"
+        ],
+        "psr-4": {
+            "app\\": "app"
+        }
     }
 }
