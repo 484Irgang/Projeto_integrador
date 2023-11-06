@@ -47,13 +47,11 @@ function router() {
     if(!empty($matchedUri)){
       
       $params = returnMatchedParams($uri, $matchedUri);
-      var_dump($params);
-      die();
     }
   }
 
   if(!empty($matchedUri)) {
-    controller($matchedUri,$params);
+    return controller($matchedUri,$params);
   }
   else{
     throw new Exception("Não foi encontrado um caminho para sua busca!");

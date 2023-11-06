@@ -16,5 +16,5 @@ function controller($matchUri,$params) {
   }
 
   $controller = new $controllerWithPath;
-  $controller->$method($params);
+  return $controller->$method($params);
 }
