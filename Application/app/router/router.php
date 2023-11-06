@@ -40,6 +40,8 @@ function router() {
   $routes = require 'routes.php';
   $matchedUri = matchInRoutes($uri,$routes);
 
+  $params = [];
+
   if(empty($matchedUri)) {
     $matchedUri = checkDinamicUri($uri, $routes);
     if(!empty($matchedUri)){
@@ -50,5 +52,10 @@ function router() {
     }
   }
 
-  var_dump($matchedUri);
+  if(!empty($matchedUri)) {
+    controller($matchedUri,$params);
+  }
+  else{
+    throw new Exception("Não foi encontrado um caminho para sua busca!");
+  }
 }
