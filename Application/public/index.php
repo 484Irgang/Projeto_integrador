@@ -12,7 +12,8 @@
       throw new Exception("Não existe essa página");
     }
 
-    extract($routerData['data']);
+    extract($routerData['props']);
+    $title = $routerData['title'];
     $view = $routerData['view'];
     require VIEWS_PATH.'app.php';
   }
