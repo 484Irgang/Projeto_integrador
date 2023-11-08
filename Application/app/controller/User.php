@@ -7,6 +7,7 @@ class User {
     return [
       "view" => "user_profile.php",
       "title" => "Perfil do usuário",
+      'style_file' => 'user_profile.css',
       "props" => $params
     ];
   }
@@ -17,6 +18,7 @@ class User {
     return [
       "view" => "users_list.php",
       "title" => "Lista de usuários",
+      'style_file' => 'user_list.css',
       "props" => ["users" => $users]
     ];
   }

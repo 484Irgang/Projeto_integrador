@@ -7,6 +7,7 @@ class Home{
     return [
       'view' => 'home.php',
       'title' => 'Home page',
+      'style_file' => 'home.css',
       'props' => $params
     ];
   }

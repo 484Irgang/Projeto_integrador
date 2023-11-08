@@ -15,6 +15,7 @@
     extract($routerData['props']);
     $title = $routerData['title'];
     $view = $routerData['view'];
+    $style_file = $routerData['style_file'];
     require VIEWS_PATH.'app.php';
   }
   catch(Exception $e){

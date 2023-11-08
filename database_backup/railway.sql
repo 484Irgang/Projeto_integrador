@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: viaduct.proxy.rlwy.net    Database: railway
+-- Host: localhost    Database: railway
 -- ------------------------------------------------------
 -- Server version	8.2.0
 
@@ -16,34 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `student`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `student`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `student` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `birthDate` date DEFAULT NULL,
-  `insertedAt` date DEFAULT NULL,
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(40) NOT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `telephone` varchar(45) DEFAULT NULL,
   `email` text,
-  `telefone` text,
-  `cpf` text,
-  `course` text,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `born_date` date DEFAULT NULL,
+  `document_type` enum('CPF','CNPJ') NOT NULL,
+  `document_number` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `student`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'Guilherme','1999-05-14',NULL,'484gui@gmail.com','47991142416','11072147939','ADS'),(2,'Ana Carol',NULL,NULL,'gui.gdli@gmail.com','47992237424','332212441551','ADMIN');
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Guilherme de Lima','Irgang','991142416','484gui@gmail.com',NULL,'CPF','11072147939'),(2,'Tainara Shoenfleer','Irgang','234234234','teste@gmail.com',NULL,'CNPJ','144142142142141'),(3,'Bruno Vigario','Silva','99224541521','teste@gmail.com',NULL,'CNPJ','123414232000123'),(4,'Bastiao Prado','Silva','991246754','teste@gmail.com',NULL,'CNPJ','81521234550'),(5,'Lino Frist','Pedor','99223409877','teste@gmail.com',NULL,'CPF','445500245465');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-05 15:12:15
+-- Dump completed on 2023-11-08 20:38:55
