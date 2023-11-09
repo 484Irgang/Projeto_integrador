@@ -38,12 +38,15 @@ function router() {
   $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
   $routes = require 'routes.php';
-  $matchedUri = matchInRoutes($uri,$routes);
+  $request_method = $_SERVER["REQUEST_METHOD"];
+
+  $matchedUri = matchInRoutes($uri,$routes[$request_method]);
+  
 
   $params = [];
 
   if(empty($matchedUri)) {
-    $matchedUri = checkDinamicUri($uri, $routes);
+    $matchedUri = checkDinamicUri($uri, $routes[$request_method]);
     if(!empty($matchedUri)){
       
       $params = returnMatchedParams($uri, $matchedUri);

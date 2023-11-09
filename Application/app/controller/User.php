@@ -4,11 +4,16 @@ namespace app\controller;
 
 class User {
   public function index($params) {
+    if(!isset($params['user'])){
+      redirect('/');
+    }
+      $user_id = $params['user'];
+      $user = fetchBy('user','id',$user_id);
     return [
       "view" => "user_profile.php",
       "title" => "Perfil do usuário",
       'style_file' => 'user_profile.css',
-      "props" => $params
+      "props" => ["user" => $user]
     ];
   }
 

@@ -12,7 +12,9 @@
       throw new Exception("Não existe essa página");
     }
 
-    extract($routerData['props']);
+    if(isset($routerData['props'])) {
+      extract($routerData['props']);
+    }
     $title = $routerData['title'];
     $view = $routerData['view'];
     $style_file = $routerData['style_file'];

@@ -1,2 +1,7 @@
 <?php
-echo "<h2>Aqui é o usuário do id {$user}</h2>";
+echo "<pre>";
+if($user){
+  print_r($user);
+}
+else echo "Sem usuário";
+echo "</pre>";

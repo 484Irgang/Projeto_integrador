@@ -21,7 +21,8 @@
             "app/helper/constants.php",
             "app/core/controller.php",
             "app/database/connect.php",
-            "app/database/fetch.php"
+            "app/database/fetch.php",
+            "app/helper/redirect.php"
         ],
         "psr-4": {
             "app\\": "app"
