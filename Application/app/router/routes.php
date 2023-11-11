@@ -1,7 +1,11 @@
 <?php 
 return [
   "POST" => [
-    "/login" => "Login@store"
+    "/login" => "Login@store",
+    "/user/create/ADMIN" => "User@create_admin",
+    "/user/create/STUDENT" => "User@create_student",
+    "/user/create/TEACHER" => "User@create_teacher",
+    "/user/create/SUPPLIER" => "User@create_supplier"
   ],
   "GET" => [
     "/" => "Home@index",

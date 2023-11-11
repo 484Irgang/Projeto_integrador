@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `student`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student` (
   `registration` varchar(20) NOT NULL,
-  `user_id` varchar(45) NOT NULL,
+  `user_id` int NOT NULL,
   `status` enum('ACTIVE','INACTIVE','SUSPENDED') NOT NULL,
   `current_semester` int NOT NULL,
   `course` varchar(75) NOT NULL,
   `course_value` varchar(50) DEFAULT NULL,
   `registration_date` date DEFAULT NULL,
-  PRIMARY KEY (`registration`),
-  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `registration_UNIQUE` (`registration`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-10 22:02:59
+-- Dump completed on 2023-11-11 13:53:46

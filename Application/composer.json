@@ -19,11 +19,14 @@
         "files": [
             "app/router/router.php",
             "app/helper/constants.php",
+            "app/helper/redirect.php",
+            "app/helper/errors.php",
+            "app/helper/validate.php",
+            "app/helper/success.php",
             "app/core/controller.php",
             "app/database/connect.php",
             "app/database/fetch.php",
-            "app/helper/redirect.php",
-            "app/helper/errors.php"
+            "app/database/create.php"
         ],
         "psr-4": {
             "app\\": "app"

@@ -6,8 +6,7 @@ class Home{
   public function index($params){
     
   if(!isset($_SESSION['LOGGED'])) {
-    $_SESSION['error_message'] = 'Usuário não autenticado';
-    return redirect('/login');
+    return saveErrorAndRedirect('Usuário não autenticado', '/login');
   }
     return [
       'view' => 'home.php',

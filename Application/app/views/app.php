@@ -14,6 +14,7 @@
   <?php 
     require VIEWS_PATH.$view;
     showErrorIfHave();
+    showSuccessIfHave();
   ?>
 </body>
 </html>

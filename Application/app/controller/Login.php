@@ -5,7 +5,7 @@ namespace app\controller;
 class Login{
   public function index(){
     if(isset($_SESSION['LOGGED'])) {
-      unset($_SESSION['LOGGED']);
+      return saveErrorAndRedirect('Usuário já está logado', '/');
     }
 
     return [
@@ -20,15 +20,13 @@ class Login{
     $password = filter_input(INPUT_POST, 'password');
 
     if (empty($email) || empty($password)){
-      $_SESSION['error_message'] = 'Dados precisam ser inseridos';
-      return redirect('/login');
+      return saveErrorAndRedirect('Dados precisam ser inseridos', '/login');
     }
 
     $user = fetchAdminUser("email", $email);
 
     if(!$user || $password !== $user->password){
-      $_SESSION['error_message'] = 'Usuário ou senha incorretos';
-      return redirect('/login');
+      return saveErrorAndRedirect('Usuário ou senha incorretos', '/login');
     }
     
     $_SESSION['LOGGED'] = $user;

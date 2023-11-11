@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `supplier`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `supplier` (
-  `user_id` varchar(45) NOT NULL,
+  `user_id` int NOT NULL,
   `product_type` text NOT NULL,
-  `delivery_date_time` datetime NOT NULL,
+  `delivery_time` time NOT NULL,
   `price_by_service` varchar(45) NOT NULL,
   `status` enum('ACTIVE','INACTIVE','SUSPENDED') NOT NULL,
   `service_type` varchar(60) NOT NULL,
   `contract_number` varchar(75) NOT NULL,
-  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-10 22:02:59
+-- Dump completed on 2023-11-11 13:53:46

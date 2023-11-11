@@ -13,23 +13,23 @@ body {
   background-color: red;
 }
 
-#error_toast {
+#toast {
   width: 100%;
   max-width: 20rem;
   padding: 0.5rem;
   display: flex;
   gap: 1rem;
-  background-color: #ffffff;
+  background-color: #eeeeee;
   border-radius: 0.625rem;
   box-shadow: 0 0 0.5rem #38383840;
   align-items: center;
-  animation: show_error 5s ease-in-out 1 forwards;
+  animation: show_toast 5s ease-in-out 1 forwards;
   position: fixed;
   top: 1.5rem;
   left: 100%;
 }
 
-#error_toast > .error_image {
+#toast > .error_image {
   width: 3rem;
   height: 3rem;
   min-width: 3rem;
@@ -37,19 +37,28 @@ body {
   background: #eeeeee url("../img/error_icon.svg") center / cover;
 }
 
-#error_toast > p {
+#toast > .success_image {
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  background: #eeeeee url("../img/success.png") center / cover;
+}
+
+#toast > p {
   font-weight: 700;
+  font-size: 0.875rem;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  line-height: 16px; /* fallback */
-  max-height: 32px; /* fallback */
+  line-height: 1rem; /* fallback */
+  max-height: 2.5rem; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 
-@keyframes show_error {
+@keyframes show_toast {
   0% {
     transform: translateX(0);
   }
