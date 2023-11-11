@@ -2,6 +2,8 @@
 
 namespace app\controller;
 
+use app\enums\UserType;
+
 class User {
   public function index($params) {
     
@@ -40,6 +42,28 @@ class User {
       "title" => "Lista de usuários",
       'style_file' => 'user_list.css',
       "props" => ["users" => $users]
+    ];
+  }
+
+  public function create($params){
+    if(!isset($_SESSION['LOGGED'])) {
+      $_SESSION['error_message'] = 'Usuário não autenticado';
+      return redirect('/login');
+    }
+
+    $create_type = $params['create'];
+    $user_type = UserType::tryFrom($create_type);
+
+    if(!$user_type) {
+      $_SESSION['error_message'] = 'Tipo de usuário não disponível para cadastro';
+      return redirect('/');
+    }
+
+    return [
+      "view" => "user_create.php",
+      "title" => "Cadastro de usuário",
+      'style_file' => 'user_create.css',
+      "props" => ["user_type" => $user_type]
     ];
   }
 }

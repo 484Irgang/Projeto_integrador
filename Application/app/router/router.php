@@ -57,6 +57,7 @@ function router() {
     return controller($matchedUri,$params);
   }
   else{
-    throw new Exception("Não foi encontrado um caminho para sua busca!");
+    $_SESSION['error_message'] = 'Nenhum caminho encontrado';
+      return redirect('/');
   }
 }
