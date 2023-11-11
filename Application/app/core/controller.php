@@ -1,6 +1,7 @@
 <?php
 
 function controller($matchUri,$params) {
+
   $uriValue = array_values($matchUri)[0];
 
   [$controller, $method] = explode('@', $uriValue);

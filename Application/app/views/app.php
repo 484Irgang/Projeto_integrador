@@ -12,6 +12,7 @@
 <body>
   <?php 
     require VIEWS_PATH.$view;
+    showErrorIfHave();
   ?>
 </body>
 </html>

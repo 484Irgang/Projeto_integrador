@@ -1,9 +1,9 @@
 <?php
   require './bootstrap.php';
-
+  
   try {
     $routerData = router();
-    
+  
     if(!isset($routerData['view'])) {
       throw new Exception("Não foi possível encontrar o valor do view");
     }

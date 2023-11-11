@@ -20,3 +20,15 @@ function fetchBy($table, $field, $value, $fields = "*"){
     echo $error->getMessage();
   }
 }
+
+function fetchAdminUser($field, $value) {
+  try {
+    $connect_db = connect();
+    $prepare = $connect_db->prepare("select * from user where {$field} = :{$field} and user_type = 'ADMIN'");
+    $prepare->execute([$field => $value]);
+    return $prepare->fetch();
+  }
+  catch(PDOException $error) {
+    echo $error->getMessage();
+  }
+}

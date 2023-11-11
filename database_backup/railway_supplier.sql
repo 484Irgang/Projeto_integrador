@@ -16,33 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `supplier`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `supplier`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(40) NOT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `telephone` varchar(45) DEFAULT NULL,
-  `email` text,
-  `born_date` date DEFAULT NULL,
-  `document_type` enum('CPF','CNPJ') NOT NULL,
-  `document_number` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `supplier` (
+  `user_id` varchar(45) NOT NULL,
+  `product_type` text NOT NULL,
+  `delivery_date_time` datetime NOT NULL,
+  `price_by_service` varchar(45) NOT NULL,
+  `status` enum('ACTIVE','INACTIVE','SUSPENDED') NOT NULL,
+  `service_type` varchar(60) NOT NULL,
+  `contract_number` varchar(75) NOT NULL,
+  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `supplier`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Guilherme de Lima','Irgang','991142416','484gui@gmail.com',NULL,'CPF','11072147939'),(2,'Tainara Shoenfleer','Irgang','234234234','teste@gmail.com',NULL,'CNPJ','144142142142141'),(3,'Bruno Vigario','Silva','99224541521','teste@gmail.com',NULL,'CNPJ','123414232000123'),(4,'Bastiao Prado','Silva','991246754','teste@gmail.com',NULL,'CNPJ','81521234550'),(5,'Lino Frist','Pedor','99223409877','teste@gmail.com',NULL,'CPF','445500245465');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `supplier` WRITE;
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-08 20:38:55
+-- Dump completed on 2023-11-10 22:02:59
