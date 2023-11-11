@@ -72,43 +72,98 @@ class User {
       return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/ADMIN');
     }
     
-    $only_user_data = returnOnlyUserData($_POST);
-    $new_user = createUser($only_user_data, 'ADMIN');
+    $only_user_data = returnOnlyFields($_POST, ONLY_USER_FIELDS);
+    $new_user_id = createUser($only_user_data, 'ADMIN');
 
-    if(!$new_user) {
+    if(!$new_user_id) {
       return saveErrorAndRedirect("Problemas ao salvar o usuário", '/');
     }
 
-    return saveSuccessAndRedirect("Usuário administrador cadastrado com sucesso", '/');
+    return saveSuccessAndRedirect("Administrador cadastrado com sucesso", '/');
   }
 
   public function create_teacher(){
     $email_exist = validate_email_exist($_POST['email']);
+    $teacher_registration_exist = validateRegisterExist('teacher', $_POST['registration']);
+
+    if($teacher_registration_exist) {
+         return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/create/TEACHER');
+       }
+
     if($email_exist) {
-      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/ADMIN');
+      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/TEACHER');
     }
     
-    $only_user_data = returnOnlyUserData($_POST);
-    $new_user = createUser($only_user_data, 'TEACHER');
+    $only_user_data = returnOnlyFields($_POST, ONLY_USER_FIELDS);
+    $new_user_id = createUser($only_user_data, 'TEACHER');
+
+    if(!$new_user_id) {
+      return saveErrorAndRedirect("Problemas ao salvar o usuário", '/');
+    }
+
+    $only_teacher_fields = returnOnlyFields($_POST, ONLY_TEACHER_FIELDS);
+    $only_teacher_fields['registration_date'] = date('Y-m-d');
+    
+    $success = createUserType($only_teacher_fields, 'teacher', $new_user_id);
+
+    if(!$success) {
+      return saveErrorAndRedirect("Não foi possível criar o usuário como professor", '/');
+    }
+
+    return saveSuccessAndRedirect("Professor criado com sucesso", '/');
   }
 
   public function create_student(){
     $email_exist = validate_email_exist($_POST['email']);
+    $student_registration_exist = validateRegisterExist('student', $_POST['registration']);
+
+    if($student_registration_exist) {
+         return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/create/TEACHER');
+       }
     if($email_exist) {
-      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/ADMIN');
+      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/STUDENT');
     }
+
     
-    $only_user_data = returnOnlyUserData($_POST);
-    $new_user = createUser($only_user_data, 'STUDENT');
+    $only_user_data = returnOnlyFields($_POST, ONLY_USER_FIELDS);
+    $new_user_id = createUser($only_user_data, 'STUDENT');
+
+    if(!$new_user_id) {
+      return saveErrorAndRedirect("Problemas ao salvar o usuário", '/');
+    }
+
+    $only_student_data = returnOnlyFields($_POST, ONLY_STUDENT_FIELDS);
+    $only_student_data['registration_date'] = date('Y-m-d');
+
+    $success = createUserType($only_student_data, 'student', $new_user_id);
+
+    if(!$success) {
+      return saveErrorAndRedirect("Não foi possível criar o usuário como aluno", '/');
+    }
+
+    return saveSuccessAndRedirect("Aluno criado com sucesso", '/');
   }
 
   public function create_supplier(){
     $email_exist = validate_email_exist($_POST['email']);
     if($email_exist) {
-      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/ADMIN');
+      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/SUPPLIER');
     }
     
-    $only_user_data = returnOnlyUserData($_POST);
-    $new_user = createUser($only_user_data, 'SUPPLIER');
+    $only_user_data = returnOnlyFields($_POST, ONLY_USER_FIELDS);
+    $new_user_id = createUser($only_user_data, 'SUPPLIER');
+
+    if(!$new_user_id) {
+      return saveErrorAndRedirect("Problemas ao salvar o usuário", '/');
+    }
+
+    $only_supplier_data = returnOnlyFields($_POST, ONLY_SUPPLIER_FIELDS);
+    $success = createUserType($only_supplier_data, 'supplier', $new_user_id);
+
+    if(!$success) {
+      return saveErrorAndRedirect("Não foi possível criar o usuário como fornecedor", '/');
+    }
+
+    return saveSuccessAndRedirect("Fornecedor criado com sucesso", '/');
   }
 }

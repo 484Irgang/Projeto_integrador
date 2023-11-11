@@ -11,10 +11,17 @@
   ?>
 </head>
 <body>
-  <?php 
+  <div id="root">
+  <?php
+    if($view !== 'login.php') {
+      require VIEWS_PATH.'components/header.php';
+    }
+  ?>
+  <?php
     require VIEWS_PATH.$view;
     showErrorIfHave();
     showSuccessIfHave();
   ?>
+  </div>
 </body>
 </html>

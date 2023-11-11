@@ -20,3 +20,21 @@ function createUser($user_data, $user_type){
     return saveErrorAndRedirect($error->getMessage(), '/');
   }
 }
+
+function createUserType($user_data, $user_type, $user_id){
+  $user_data['user_id'] = $user_id;
+
+  $sql = "insert into {$user_type}(";
+  $sql.= implode(', ', array_keys($user_data)).')';
+  $sql.= ' values(:'.implode(', :', array_keys($user_data)).')';
+
+  try{
+    $db = connect();
+    $create = $db->prepare($sql);
+    $sucess = $create->execute($user_data);
+    
+    return $sucess;
+  } catch(PDOException $error){
+    return saveErrorAndRedirect($error->getMessage(), '/');
+  }
+}

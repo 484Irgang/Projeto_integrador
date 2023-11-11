@@ -10,8 +10,18 @@ function validate_email_exist($email){
   return true;
 }
 
-function returnOnlyUserData($array){
-  return array_filter($array, function ($key){
-    return in_array($key, ONLY_USER_FIELDS);
+function returnOnlyFields($array, $fields){
+  return array_filter($array, function ($key) use ($fields){
+    return in_array($key, $fields);
   }, ARRAY_FILTER_USE_KEY);
+}
+
+function validateRegisterExist($table, $register){
+  $user = fetchBy($table, 'registration', $register);
+
+  if(!$user) {
+    return false;
+  }
+
+  return true;
 }

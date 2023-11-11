@@ -3,10 +3,10 @@
   <form method="post" action="/user/create/<?php echo $user_type->name ?>">
     <input type="text" name="first_name" required value="Guilherme" />
     <input type="text" name="last_name" />
-    <input type="text" name="telephone" />
+    <input type="number" name="telephone" />
     <input type="email" name="email" required value="tainaracs200sc@gmail.com"/>
     <?php showFieldError('email'); ?>
-    <input type="date" name="born_date" required/>
+    <input type="date" name="born_date" value="1999-05-14" required/>
     <p><input type="radio" name="document_type" value="CPF" checked /> Pessoa Física</p>
     <p><input type="radio" name="document_type" value="CNPJ" /> Pessoa Jurídica</p>
     <input type="text" name="document_number" required value="241414151512"/>
