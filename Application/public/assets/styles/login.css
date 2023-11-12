@@ -1,0 +1,80 @@
+#section_login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: url("../img/login_bg.jpg") 5% 100% / 50% auto no-repeat;
+}
+
+#section_login > h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  font-weight: 900;
+  color: var(--selective-yellow);
+}
+
+#login_content {
+  width: 100%;
+  max-width: 20rem;
+  background-color: var(--selective-yellow);
+  margin: auto 0 auto auto;
+  position: relative;
+  right: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  row-gap: 1rem;
+}
+
+#login_content > h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--prussian-blue);
+  text-transform: uppercase;
+}
+
+#login_content > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+#login_content > form > .field_box {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 0.2rem;
+}
+
+#login_content > form > .field_box > p {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: var(--prussian-blue);
+  font-weight: 500;
+}
+
+#login_content > form input {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  outline: none;
+  border: none;
+  border-radius: 0.625rem;
+}
+
+#login_content > form > button {
+  padding: 0.4rem 1.8rem;
+  border: none;
+  border-radius: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--prussian-blue);
+  cursor: pointer;
+}
