@@ -59,9 +59,9 @@ class User {
     }
 
     return [
-      "view" => "user_create.php",
+      "view" => "user_form.php",
       "title" => "Cadastro de usuário",
-      'style_file' => 'user_create.css',
+      'style_file' => 'user_form.css',
       "props" => ["user_type" => $user_type]
     ];
   }
