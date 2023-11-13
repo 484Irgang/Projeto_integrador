@@ -30,7 +30,7 @@
       <input type="date" name="born_date" value="1999-05-14" required/>
     </div>
     
-    <div class="form_field">
+    <div class="form_field_radio">
       <h4><input type="radio" name="document_type" value="CPF" checked /> Pessoa Física</h4>
       <h4><input type="radio" name="document_type" value="CNPJ" /> Pessoa Jurídica</h4>
     </div>

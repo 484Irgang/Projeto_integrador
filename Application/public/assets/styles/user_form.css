@@ -1,23 +1,24 @@
 #form_user {
-  width: 100%;
+  width: calc(100% - 0.8rem);
+  margin: 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+}
 
-  ::-webkit-scrollbar {
-    width: 0.4rem;
-  }
+#form_user::-webkit-scrollbar {
+  width: 0.4rem;
+}
 
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+#form_user ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--prussian-blue);
-    border-radius: 0.15rem;
-  }
+#form_user::-webkit-scrollbar-thumb {
+  background-color: var(--prussian-blue);
+  border-radius: 0.15rem;
 }
 
 #form_user .form_content {
@@ -42,7 +43,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  row-gap: 0.4rem;
+  row-gap: 1rem;
 }
 
 #form_user .form_content > form > .form_field {
@@ -51,6 +52,17 @@
   flex-direction: column;
   row-gap: 0.2rem;
   align-items: start;
+}
+
+#form_user .form_content > form > .form_field_radio {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#form_user .form_content > form > .form_field_radio > h4 {
+  color: var(--prussian-blue);
 }
 
 #form_user .form_content > form > .form_field > p {
@@ -72,4 +84,17 @@
 #form_user .form_content > form > .form_field > input::placeholder {
   font-weight: 500;
   color: #d6d6d6;
+}
+
+#form_user .form_content > form > button {
+  max-width: 12rem;
+  width: 12rem;
+  padding: 0.5rem 0;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.875rem;
+  background-color: var(--prussian-blue);
+  color: #ffffff;
+  margin: 0 auto;
+  cursor: pointer;
 }
