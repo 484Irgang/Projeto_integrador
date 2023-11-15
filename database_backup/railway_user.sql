@@ -34,7 +34,7 @@ CREATE TABLE `user` (
   `user_type` enum('STUDENT','TEACHER','SUPPLIER','ADMIN') NOT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Guilherme de Lima','Irgang','991142416','484gui@gmail.com',NULL,'CPF','11072147939','ADMIN','12345'),(12,'Guilherme','','','tainaracs200sc@gmail.com','2023-11-28','CPF','241414151512','ADMIN','3465366346'),(13,'Guilherme','','','tainaracs200sc@mail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346'),(14,'Guilherme','','','tainaracsssa200sc@gmail.com','2023-11-21','CPF','241414151512','ADMIN','3465366346'),(15,'Guilherme','','','tainaracasass200sc@gmail.com','2023-11-05','CPF','241414151512','ADMIN','3465366346'),(16,'Guilherme','','','tainaawracs200sc@gmail.com','2023-10-30','CPF','241414151512','ADMIN','3465366346'),(17,'Guilherme','','','tainaracs2asd00sc@gmail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346'),(18,'Guilherme','','','tainaasaracs200sc@gmail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346');
+INSERT INTO `user` VALUES (1,'Guilherme de Lima','Irgang','991142416','484gui@gmail.com',NULL,'CPF','11072147939','ADMIN','12345'),(12,'Guilherme','','','tainaracs200sc@gmail.com','2023-11-28','CPF','241414151512','ADMIN','3465366346'),(13,'Guilherme','','','tainaracs200sc@mail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346'),(14,'Guilherme','','','tainaracsssa200sc@gmail.com','2023-11-21','CPF','241414151512','ADMIN','3465366346'),(15,'Guilherme','','','tainaracasass200sc@gmail.com','2023-11-05','CPF','241414151512','ADMIN','3465366346'),(16,'Guilherme','','','tainaawracs200sc@gmail.com','2023-10-30','CPF','241414151512','ADMIN','3465366346'),(17,'Guilherme','','','tainaracs2asd00sc@gmail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346'),(18,'Guilherme','','','tainaasaracs200sc@gmail.com','2023-11-07','CPF','241414151512','ADMIN','3465366346'),(19,'Guilherme','','','tainaracs@mail.com','2023-11-13','CPF','241414151512','TEACHER',NULL),(20,'Guilherme','','','tsc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(21,'Guilherme','','','0sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(22,'Guilherme','','','tain@mail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(23,'Guilherme','','','tainaraasdcs200sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(24,'Guilherme','','','acs200sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(25,'Guilherme','','','tainara0sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(26,'Guilherme','','','tain200sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(27,'Guilherme','','','s200sc@gmail.com','1999-05-14','CPF','241414151512','TEACHER',NULL),(28,'Guilherme','','','dadas200sc@gmail.com','1999-05-14','CPF','241414151512','STUDENT',NULL),(29,'Guilherme','','','gui.gdli@gmail.com','1999-05-14','CPF','241414151512','SUPPLIER',NULL),(30,'Guilherme ','Irgang ','4236534563456435','jhondoe@gmail.com','2023-11-13','CNPJ','000.001.123.12','SUPPLIER',NULL),(31,'Tainara','Irgang','4236534563456435','34teste3@gmail.com','2023-11-07','CPF','11072147939','STUDENT',NULL),(32,'Guilherme de Lima','','','fret@gmail.com','2023-11-13','CNPJ','123.1244.00001/123','TEACHER',NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-11 13:53:46
+-- Dump completed on 2023-11-15 18:30:17
