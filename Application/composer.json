@@ -1,7 +1,7 @@
 {
     "name": "alunos-senac/projeto-integrador",
     "scripts": {
-        "start": [
+        "dev": [
             "Composer\\Config::disableProcessTimeout",
             "php -S localhost:3001 -t public"
         ]
