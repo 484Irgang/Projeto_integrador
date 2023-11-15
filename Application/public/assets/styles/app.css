@@ -33,13 +33,12 @@ body {
   padding: 0.5rem;
   display: flex;
   gap: 1rem;
-  background-color: #eeeeee;
+  background-color: var(--prussian-blue);
   border-radius: 0.625rem;
-  box-shadow: 0 0 0.5rem #38383840;
   align-items: center;
   animation: show_toast 5s ease-in-out 1 forwards;
   position: fixed;
-  top: 1.5rem;
+  top: 4.5rem;
   left: 100%;
 }
 
@@ -48,7 +47,7 @@ body {
   height: 3rem;
   min-width: 3rem;
   min-height: 3rem;
-  background: #eeeeee url("../img/error_icon.svg") center / cover;
+  background: url("../img/error_icon.svg") center / cover;
 }
 
 #toast > .success_image {
@@ -56,7 +55,7 @@ body {
   height: 3rem;
   min-width: 3rem;
   min-height: 3rem;
-  background: #eeeeee url("../img/success.png") center / cover;
+  background: url("../img/success.png") center / cover;
 }
 
 #toast > p {
@@ -70,6 +69,7 @@ body {
   max-height: 2.5rem; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  color: #ffffff;
 }
 
 @keyframes show_toast {

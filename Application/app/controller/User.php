@@ -69,6 +69,7 @@ class User {
   public function create_admin(){
     $email_exist = validate_email_exist($_POST['email']);
     if($email_exist) {
+      saveError("Campo inválido");
       return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/ADMIN');
     }
     
@@ -87,10 +88,12 @@ class User {
     $teacher_registration_exist = validateRegisterExist('teacher', $_POST['registration']);
 
     if($teacher_registration_exist) {
+        saveError("Campo inválido");
          return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/create/TEACHER');
        }
 
     if($email_exist) {
+      saveError("Campo inválido");
       return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/TEACHER');
     }
     
@@ -118,9 +121,11 @@ class User {
     $student_registration_exist = validateRegisterExist('student', $_POST['registration']);
 
     if($student_registration_exist) {
-         return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/create/TEACHER');
+        saveError("Campo inválido");
+         return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/create/STUDENT');
        }
     if($email_exist) {
+      saveError("Campo inválido");
       return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/STUDENT');
     }
 
@@ -147,6 +152,7 @@ class User {
   public function create_supplier(){
     $email_exist = validate_email_exist($_POST['email']);
     if($email_exist) {
+      saveError("Campo inválido");
       return saveErrorFieldAndRedirect('email','Este email já existe', '/user/create/SUPPLIER');
     }
     

@@ -13,6 +13,11 @@ function showErrorIfHave(){
   return;
 }
 
+function saveError($message) {
+  $_SESSION['error_message'] = $message;
+  return;
+}
+
 function saveErrorAndRedirect($message, $to){
   $_SESSION['error_message'] = $message;
 

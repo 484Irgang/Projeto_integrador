@@ -9,10 +9,11 @@ return [
   ],
   "GET" => [
     "/" => "Home@index",
-  "/user/create/[A-Z]+" => "User@create",
-  "/user/[0-9]+" => "User@index",
-  "/user/all" => "User@all",
-  "/login" => "Login@index",
-  "/login/destroy" => "Login@destroy"
+    "/home" => "Home@index",
+    "/user/create/[A-Z]+" => "User@create",
+    "/user/[0-9]+" => "User@index",
+    "/user/all" => "User@all",
+    "/login" => "Login@index",
+    "/login/destroy" => "Login@destroy"
   ]
 ];

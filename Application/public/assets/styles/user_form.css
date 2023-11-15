@@ -1,11 +1,12 @@
 #form_user {
   width: calc(100% - 0.8rem);
   margin: 0 auto;
-  height: 100%;
+  height: calc(100% - 3.8rem);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   overflow-y: auto;
+  background: url("../img/user_bg.jpg") 95% 50% / 50% no-repeat;
 }
 
 #form_user::-webkit-scrollbar {
@@ -26,17 +27,24 @@
   max-width: 40rem;
   display: flex;
   background-color: var(--selective-yellow);
-  border-radius: 1.25rem;
+  border-radius: 0 0 1.25rem 1.25rem;
   flex-direction: column;
   padding: 1rem 1.75rem;
   row-gap: 0.5rem;
+  margin-left: 5%;
 }
 
 #form_user .form_content > h2 {
   width: 100%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 900;
   color: var(--prussian-blue);
+}
+
+#form_user .form_content > h2 > span {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 #form_user .form_content > form {
@@ -54,11 +62,16 @@
   align-items: start;
 }
 
+#form_user .form_content > form > .date {
+  max-width: 10rem;
+}
+
 #form_user .form_content > form > .form_field_radio {
   width: 100%;
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
 }
 
 #form_user .form_content > form > .form_field_radio > h4 {
@@ -70,6 +83,7 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   color: var(--prussian-blue);
+  margin-left: 0.5rem;
 }
 
 #form_user .form_content > form > .form_field > input {
@@ -83,7 +97,14 @@
 
 #form_user .form_content > form > .form_field > input::placeholder {
   font-weight: 500;
-  color: #d6d6d6;
+  color: #b0b0b0;
+}
+
+#form_user .form_content > form > .form_field > .error_field_message {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff0000;
+  margin-left: 0.5rem;
 }
 
 #form_user .form_content > form > button {
@@ -97,4 +118,17 @@
   color: #ffffff;
   margin: 0 auto;
   cursor: pointer;
+}
+
+#form_user .form_content > form > .form_field > select {
+  width: 10rem;
+  outline: none;
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  background-color: var(--prussian-blue);
+  color: #ffffff;
+}
+
+#form_user .form_content > form > .form_field > select > option {
+  margin: 0.3rem 0;
 }
