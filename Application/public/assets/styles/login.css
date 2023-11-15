@@ -22,7 +22,7 @@
   background-color: var(--selective-yellow);
   margin: auto 0 auto auto;
   position: relative;
-  right: 10rem;
+  right: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;

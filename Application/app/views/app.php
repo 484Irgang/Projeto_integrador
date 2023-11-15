@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $title?></title>
   <link rel="stylesheet" type="text/css" href="/assets/styles/app.css" />
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
   <?php 
 
     echo '<link rel="stylesheet" type="text/css" href="/assets/styles/'.$style_file.'" />'
