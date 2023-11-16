@@ -55,7 +55,7 @@ class User {
     $user_type = UserType::tryFrom($create_type);
 
     if(!$user_type) {
-      saveErrorAndRedirect('Tipo de usuário não disponível para cadastro', '/');
+      return saveErrorAndRedirect('Tipo de usuário não disponível para cadastro', '/');
     }
 
     return [
@@ -171,5 +171,46 @@ class User {
     }
 
     return saveSuccessAndRedirect("Fornecedor criado com sucesso", '/');
+  }
+
+  public function update($params){
+    if(!isset($_SESSION['LOGGED'])) {
+      return saveErrorAndRedirect('Usuário não autenticado', '/login');
+    }
+
+    $user_id = $params['update'];
+    $user = fetchBy('user', 'id', $user_id);
+
+    if(!$user){
+      return saveErrorAndRedirect('Usuário não encontrado', '/home');
+    }
+
+    $user_type = UserType::tryFrom($user->user_type);
+
+    if(!$user_type) {
+      return saveErrorAndRedirect('Tipo de usuário não disponível para edição', '/');
+    }
+
+    if($user_type !== UserType::ADMIN){
+      $user_type_data = fetchBy($user->user_type, 'user_id', $user_id);
+      
+      if(!$user_type_data) {
+        return saveErrorAndRedirect('Sem dados para esse tipo de usuário', '/');
+      }
+
+      unset($user->password);
+
+      foreach($user_type_data as $field => $value){
+        $user[$field] = $value;
+      }
+    }
+
+    return [
+      "view" => "user_form.php",
+      "title" => "Edição de usuário",
+      'style_file' => 'user_form.css',
+      "props" => ["user_type" => $user_type, "user" => $user]
+    ];
+    
   }
 }

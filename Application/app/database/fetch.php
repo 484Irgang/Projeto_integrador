@@ -5,7 +5,7 @@ function fetchAll($table, $fields = "*") {
   $query = $db->query("select {$fields} from {$table}");
   return $query->fetchAll();
   }catch(PDOException $error) {
-    echo $error->getMessage();
+    return saveErrorAndRedirect($error->getMessage(), '/home');
   }
 }
 
@@ -17,7 +17,7 @@ function fetchBy($table, $field, $value, $fields = "*"){
     return $prepare->fetch();
   }
   catch(PDOException $error) {
-    echo $error->getMessage();
+    return saveErrorAndRedirect($error->getMessage(), '/home');
   }
 }
 
@@ -29,6 +29,6 @@ function fetchAdminUser($field, $value) {
     return $prepare->fetch();
   }
   catch(PDOException $error) {
-    echo $error->getMessage();
+    return saveErrorAndRedirect($error->getMessage(), '/home');
   }
 }

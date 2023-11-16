@@ -14,6 +14,7 @@ return [
     "/user/[0-9]+" => "User@index",
     "/user/all" => "User@all",
     "/login" => "Login@index",
-    "/login/destroy" => "Login@destroy"
+    "/login/destroy" => "Login@destroy",
+    "/user/update/[0-9]+" => "User@update"
   ]
 ];

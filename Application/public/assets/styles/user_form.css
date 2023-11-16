@@ -60,6 +60,7 @@
   flex-direction: column;
   row-gap: 0.2rem;
   align-items: start;
+  position: relative;
 }
 
 #form_user .form_content > form > .date {
@@ -76,6 +77,7 @@
 
 #form_user .form_content > form > .form_field_radio > h4 {
   color: var(--prussian-blue);
+  cursor: default;
 }
 
 #form_user .form_content > form > .form_field > p {
@@ -93,6 +95,20 @@
   outline: none;
   border: none;
   font-weight: 700;
+  cursor: pointer;
+}
+
+#form_user .form_content > form > .form_field > #eye_button {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 0.3rem;
+  top: 68%;
+  transform: translateY(-50%);
+  background: url("../img/eye.png") center / auto no-repeat;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 #form_user .form_content > form > .form_field > input::placeholder {
