@@ -35,7 +35,27 @@ class User {
     
     $users = fetchAll("user");
     foreach($users as $user){
+      $user_type = UserType::tryFrom($user->user_type);
+
+    if(!$user_type) {
+      return saveErrorAndRedirect('Tipo de usuário não disponível para edição', '/');
+    }
+
+    if($user_type !== UserType::ADMIN){
+      $user_type_data = fetchBy($user->user_type, 'user_id', $user->id);
+      
+      if(!$user_type_data) {
+        return saveErrorAndRedirect('Sem dados para esse tipo de usuário', '/');
+      }
+
       unset($user->password);
+
+      foreach($user_type_data as $field => $value){
+        $user->$field = $value;
+      }
+
+      unset($user->user_id);
+    }
     }
     
     return [
@@ -201,7 +221,7 @@ class User {
       unset($user->password);
 
       foreach($user_type_data as $field => $value){
-        $user[$field] = $value;
+        $user->$field = $value;
       }
     }
 

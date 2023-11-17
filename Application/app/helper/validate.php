@@ -34,12 +34,12 @@ function returnField($object, $field){
   echo ''; 
 }
 
-function returnChecked($object, $field, $value){
+function returnCheckedOrSelected($object, $field, $value, $attr){
   if(!isset($object->$field)){
-    return false;
+    return ;
   }
   if($object->$field === $value){
-    return true;
+    return $attr;
   }
-  return false;
+  return ;
 }

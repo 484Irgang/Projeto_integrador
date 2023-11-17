@@ -1,6 +1,6 @@
 <div class="form_field">
   <p>senha:</p>
-  <input type="password" name="password" id="password_input" value="<?php returnField($user, 'password')?>" required/>
+  <input type="password" name="password" id="password_input" value="<?php returnField($user ?? null, 'password')?>" required/>
   <button onclick="fadePassword(event)" id="eye_button"></button>
 </div>
 <script>
