@@ -26,7 +26,8 @@
             "app/core/controller.php",
             "app/database/connect.php",
             "app/database/fetch.php",
-            "app/database/create.php"
+            "app/database/create.php",
+            "app/database/update.php"
         ],
         "psr-4": {
             "app\\": "app"

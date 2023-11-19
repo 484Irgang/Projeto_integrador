@@ -1,7 +1,7 @@
 <section id="form_user">
     <div class="form_content">
     <h2><?php echo isset($user) ? 'Edição' : 'Cadastro' ?> de usuário <br><?php echo "<span>".$user_type->getLabel()."</span>" ?></h2>
-    <form method="post" action="/user/create/<?php echo $user_type->name ?>">
+    <form method="post" action="<?php echo !isset($user) ? '/user/create/'.$user_type->name : '/user/update/'.$user->id?>">
 
     <div class="form_field">
       <p>nome:</p>
@@ -31,7 +31,7 @@
     </div>
     
     <div class="form_field_radio">
-      <h4><input type="radio" name="document_type" value="CPF" <?php echo returnCheckedOrSelected($user ?? null, 'document_type', 'CPF', 'checked')?> /> Pessoa Física</h4>
+      <h4><input type="radio" name="document_type" value="CPF" <?php echo !isset($user) ? 'checked' : returnCheckedOrSelected($user ?? null, 'document_type', 'CPF', 'checked')?> /> Pessoa Física</h4>
       <h4><input type="radio" name="document_type" value="CNPJ" <?php echo returnCheckedOrSelected($user ?? null, 'document_type', 'CNPJ', 'checked')?>/> Pessoa Jurídica</h4>
     </div>
     

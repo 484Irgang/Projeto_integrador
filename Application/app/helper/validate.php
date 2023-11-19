@@ -1,9 +1,12 @@
 <?php
 
-function validate_email_exist($email){
+function validate_email_exist($email, $user_id = null){
   $user = fetchBy('user', 'email', $email);
 
   if(!$user){
+    return false;
+  }
+  else if(isset($user_id) && $user_id === $user->id){
     return false;
   }
 
@@ -16,10 +19,14 @@ function returnOnlyFields($array, $fields){
   }, ARRAY_FILTER_USE_KEY);
 }
 
-function validateRegisterExist($table, $register){
+function validateRegisterExist($table, $register,  $user_id = null){
   $user = fetchBy($table, 'registration', $register);
 
   if(!$user) {
+    return false;
+  }
+ 
+  else if(isset($user_id) && $user_id === $user->user_id){
     return false;
   }
 

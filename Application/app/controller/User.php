@@ -233,4 +233,48 @@ class User {
     ];
     
   }
+
+  public function update_user($params){
+    $user_id = $params['update'];
+
+    $email_exist = validate_email_exist($_POST['email'], intval($user_id));
+    if($email_exist) {
+      saveError("Campo inválido");
+      return saveErrorFieldAndRedirect('email','Este email já existe', '/user/update/'.$user_id);
+    }
+
+    $only_user_data = returnOnlyFields($_POST, ONLY_USER_FIELDS);
+
+    $success = update('user', $only_user_data, 'id', $user_id);
+
+    if(!$success) {
+      return saveErrorAndRedirect("Não foi possivel atualizar o usuário", '/home');
+    }
+
+    $user = fetchBy('user', 'id', $user_id, 'user_type');
+    
+    $user_type = UserType::tryFrom($user->user_type);
+
+    if(isset($_POST['registration'])){
+      $registration_exist = validateRegisterExist($user_type->toString(), $_POST['registration'], intval( $user_id));
+
+      if($registration_exist) {
+        saveError("Campo inválido");
+         return saveErrorFieldAndRedirect('registration','Esta matrícula já existe', '/user/update/'.$user_id);
+       }
+    }
+
+    if($user_type && $user_type !== UserType::ADMIN)
+    {
+      $only_user_type_fields = returnOnlyFields($_POST, $user_type->typeFields());
+      
+      $success = update($user_type->toString(), $only_user_type_fields, 'user_id', $user_id );
+
+      if(!$success) {
+        return saveErrorAndRedirect("Não foi possível salvar os dados como ".$user_type->getLabel(), '/home');
+      }
+    }
+
+    return saveSuccessAndRedirect("Usuário atualizado com sucesso", '/home');
+  }
 }

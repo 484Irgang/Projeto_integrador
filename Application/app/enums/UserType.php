@@ -25,4 +25,22 @@ enum UserType: String {
       UserType::TEACHER => 'form/teacher.php',
     };
   }
+
+  function typeFields() {
+    return match($this) {
+      UserType::ADMIN => ONLY_USER_FIELDS,
+      UserType::STUDENT => ONLY_STUDENT_FIELDS,
+      UserType::TEACHER => ONLY_TEACHER_FIELDS,
+      UserType::SUPPLIER => ONLY_SUPPLIER_FIELDS
+    };
+  }
+
+  function toString() {
+    return match($this) {
+      UserType::ADMIN => 'user',
+      UserType::STUDENT => 'student',
+      UserType::TEACHER => 'teacher',
+      UserType::SUPPLIER => 'supplier'
+    };
+  }
 }
