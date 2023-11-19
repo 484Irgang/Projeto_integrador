@@ -277,4 +277,31 @@ class User {
 
     return saveSuccessAndRedirect("Usuário atualizado com sucesso", '/home');
   }
+
+  public function delete($params){
+    $user_id = $params['delete'];
+    $user = fetchBy('user', 'id', $user_id);
+
+    if(!isset($user)){
+      return saveErrorAndRedirect('Usuário não encontrado', '/user/all');
+    }
+
+    $success = delete('user', 'id', $user_id);
+
+    if(!$success){
+      return saveErrorAndRedirect('Não foi possível excluir o usuário', '/user/all');
+    }
+
+    $user_type = UserType::tryFrom($user->user_type);
+
+    if(isset($user_type) && $user_type !== UserType::ADMIN){
+      $success = delete($user_type->toString(), 'user_id', $user_id);
+
+      if(!$success){
+        return saveErrorAndRedirect('Não foi possível excluir os dados como '.$user_type->getLabel(), '/user/all');
+      }
+    }
+
+    return saveSuccessAndRedirect('Usuário deletado com successo', '/user/all');
+  }
 }

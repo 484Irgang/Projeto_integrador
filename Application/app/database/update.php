@@ -27,3 +27,12 @@ function update($table, $user_data, $column, $user_id){
     return saveErrorAndRedirect($error->getMessage(), '/home');
   }
 }
+
+function delete($table, $field, $value){
+  $db = connect();
+
+  $delete = $db->prepare("DELETE from $table WHERE $field = :$field");
+  $success = $delete->execute([$field => $value]);
+
+  return $success;
+}
