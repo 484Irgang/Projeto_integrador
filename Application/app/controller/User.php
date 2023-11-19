@@ -5,30 +5,7 @@ namespace app\controller;
 use app\enums\UserType;
 
 class User {
-  public function index($params) {
-    
-    if(!isset($_SESSION['LOGGED'])) {
-      return saveErrorAndRedirect('Usuário não autenticado', '/login');
-    }
-    if(!isset($params['user'])){
-      return saveErrorAndRedirect('Dados do usuário não foram passados', '/');
-    }
-      $user_id = $params['user'];
-      $user = fetchBy('user','id',$user_id);
-      if(empty($user)){
-        return saveErrorAndRedirect('Usuário não encontrado', '/');
-      }
-
-      unset($user->password);
-    return [
-      "view" => "user_profile.php",
-      "title" => "Perfil do usuário",
-      'style_file' => 'user_profile.css',
-      "props" => ["user" => $user]
-    ];
-  }
-
-  public function all(){
+   public function all(){
     if(!isset($_SESSION['LOGGED'])) {
       return saveErrorAndRedirect('Usuário não autenticado', '/login');
     }
@@ -36,6 +13,7 @@ class User {
     $users = fetchAll("user");
     foreach($users as $user){
       $user_type = UserType::tryFrom($user->user_type);
+      
 
     if(!$user_type) {
       return saveErrorAndRedirect('Tipo de usuário não disponível para edição', '/');
@@ -87,6 +65,11 @@ class User {
   }
 
   public function create_admin(){
+    $telephone_validated = validateTelphone($_POST['telephone']);
+
+    if(!$telephone_validated){
+      return saveErrorFieldAndRedirect('telephone', 'Telefone sem digitos suficientes', '/user/create/ADMIN' );
+    }
     $email_exist = validate_email_exist($_POST['email']);
     if($email_exist) {
       saveError("Campo inválido");
@@ -104,6 +87,12 @@ class User {
   }
 
   public function create_teacher(){
+    $telephone_validated = validateTelphone($_POST['telephone']);
+
+    if(!$telephone_validated){
+      return saveErrorFieldAndRedirect('telephone', 'Telefone sem digitos suficientes', '/user/create/TEACHER' );
+    }
+
     $email_exist = validate_email_exist($_POST['email']);
     $teacher_registration_exist = validateRegisterExist('teacher', $_POST['registration']);
 
@@ -137,6 +126,12 @@ class User {
   }
 
   public function create_student(){
+    $telephone_validated = validateTelphone($_POST['telephone']);
+
+    if(!$telephone_validated){
+      return saveErrorFieldAndRedirect('telephone', 'Telefone sem digitos suficientes', '/user/create/STUDENT' );
+    }
+
     $email_exist = validate_email_exist($_POST['email']);
     $student_registration_exist = validateRegisterExist('student', $_POST['registration']);
 
@@ -170,6 +165,12 @@ class User {
   }
 
   public function create_supplier(){
+    $telephone_validated = validateTelphone($_POST['telephone']);
+
+    if(!$telephone_validated){
+      return saveErrorFieldAndRedirect('telephone', 'Telefone sem digitos suficientes', '/user/create/SUPPLIER' );
+    }
+    
     $email_exist = validate_email_exist($_POST['email']);
     if($email_exist) {
       saveError("Campo inválido");
@@ -236,6 +237,12 @@ class User {
 
   public function update_user($params){
     $user_id = $params['update'];
+
+    $telephone_validated = validateTelphone($_POST['telephone']);
+
+    if(!$telephone_validated){
+      return saveErrorFieldAndRedirect('telephone', 'Telefone sem digitos suficientes', '/user/update/'.$user_id);
+    }
 
     $email_exist = validate_email_exist($_POST['email'], intval($user_id));
     if($email_exist) {

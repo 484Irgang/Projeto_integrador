@@ -50,3 +50,11 @@ function returnCheckedOrSelected($object, $field, $value, $attr){
   }
   return ;
 }
+
+function validateTelphone($number){
+  if(strlen($number) < 12){
+    return false;
+  }
+
+  return true;
+}

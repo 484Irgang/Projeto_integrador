@@ -43,4 +43,5 @@ enum UserType: String {
       UserType::SUPPLIER => 'supplier'
     };
   }
+
 }

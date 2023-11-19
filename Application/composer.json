@@ -23,6 +23,7 @@
             "app/helper/errors.php",
             "app/helper/validate.php",
             "app/helper/success.php",
+            "app/helper/card.php",
             "app/core/controller.php",
             "app/database/connect.php",
             "app/database/fetch.php",

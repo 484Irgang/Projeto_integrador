@@ -15,7 +15,8 @@
     
     <div class="form_field">
       <p>telefone:</p>
-      <input type="number" name="telephone" value="<?php returnField($user ?? null, 'telephone') ?>" placeholder="e.g. 47 1234 5678" />
+      <input type="number" name="telephone" value="<?php returnField($user ?? null, 'telephone') ?>" placeholder="e.g. 47 1234 5678" required/>
+      <?php showFieldError('telephone'); ?>
     </div>
     
     <div class="form_field">
