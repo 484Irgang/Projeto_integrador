@@ -20,7 +20,7 @@ class User {
     }
 
     if($user_type !== UserType::ADMIN){
-      $user_type_data = fetchBy($user->user_type, 'user_id', $user->id);
+      $user_type_data = fetchBy($user_type->toString(), 'user_id', $user->id);
       
       if(!$user_type_data) {
         return saveErrorAndRedirect('Sem dados para esse tipo de usuário', '/');
@@ -213,7 +213,7 @@ class User {
     }
 
     if($user_type !== UserType::ADMIN){
-      $user_type_data = fetchBy($user->user_type, 'user_id', $user_id);
+      $user_type_data = fetchBy($user_type->toString(), 'user_id', $user_id);
       
       if(!$user_type_data) {
         return saveErrorAndRedirect('Sem dados para esse tipo de usuário', '/');
