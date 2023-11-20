@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 1.5rem;
-  justify-content: center;
   align-content: start;
   overflow-y: auto;
   background: linear-gradient(
