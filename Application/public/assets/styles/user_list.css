@@ -32,8 +32,6 @@
   min-width: 20rem;
   max-width: 20rem;
   border-radius: 0.75rem;
-  max-height: fit-content;
-  height: fit-content;
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
