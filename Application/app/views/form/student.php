@@ -23,5 +23,5 @@
 
 <div class="form_field">
   <p>valor do curso:</p>
-  <input type="number" name="course_value" value="<?php returnField($user ?? null, 'course_value')?>" placeholder="e.g. R$ 2.500,00"/>
+  <input type="number" name="course_value" value="<?php returnField($user ?? null, 'course_value')?>" required placeholder="e.g. R$ 2.500,00"/>
 </div>

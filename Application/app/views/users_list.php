@@ -6,7 +6,7 @@
       <h3>'.returnUserType($user).'</h3>
   
       <div id="field">
-        <p>Nascimento: <span>'.returnUserBorn($user).'</span></p>
+        <p>Nascimento: <span>'.returnDate($user->born_date ?? null).'</span></p>
       </div>
   
       <div id="field">

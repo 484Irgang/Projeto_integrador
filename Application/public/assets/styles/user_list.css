@@ -8,7 +8,12 @@
   justify-content: center;
   align-content: start;
   overflow-y: auto;
-  background-color: red;
+  background: linear-gradient(
+    to bottom,
+    var(--selective-yellow),
+    var(--ut-orange),
+    var(--prussian-blue)
+  );
 }
 
 #container_list::-webkit-scrollbar {
@@ -29,6 +34,7 @@
   max-width: 20rem;
   border-radius: 0.75rem;
   max-height: fit-content;
+  height: fit-content;
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
