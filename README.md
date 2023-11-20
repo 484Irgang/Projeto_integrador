@@ -1,22 +1,13 @@
-# Projeto_integrador
-Projeto integrador SENAC EAD - Desenvolvimento de sistemas orientado a objeto
 # Sistema Educacional de Gestão Acadêmica
 
 ## 1. Visão Geral
-<div align="justify">
 O Sistema Educacional de Gestão Acadêmica tem como objetivo facilitar a administração de atividades acadêmicas em uma instituição de ensino. Ele oferece funcionalidades relacionadas ao lançamento de notas, alocação em disciplinas, faturamento e pagamento, e checagem de notas, atendendo às necessidades de professores, fornecedores e alunos.
-</div>
-
 ## 2. Funcionalidades Principais
 * Lançamento de Notas:
   - Permite que professores autenticados insiram e validem notas para alunos em disciplinas específicas.
   - Oferece a capacidade de cancelar o lançamento de notas.
 * Alocação em Disciplinas:
   - Permite que professores escolham disciplinas que desejam ministrar, selecionem turmas disponíveis e sejam alocados para lecionar.
-* Faturamento e Pagamento:
-  - Permite fornecedores autenticados acessarem funcionalidades de faturamento.
-  - Possibilita a seleção de faturas pendentes, confirmação dos detalhes e registro de pagamento.
-  - Inclui a capacidade de cancelar faturas.
 * Checagem de Notas:
   - Permite que alunos autenticados acessem suas notas em disciplinas específicas.
   - Informa sobre a disponibilidade ou ausência de notas.
@@ -63,16 +54,12 @@ O Sistema Educacional de Gestão Acadêmica tem como objetivo facilitar a admini
    * Realizar testes regulares de segurança e qualidade.
    * Documentação contínua para facilitar manutenção e desenvolvimento futuro.
 ## 8. Licença do Projeto
-<div align="justify">
-O Sistema Educacional de Gestão Acadêmica é distribuído sob uma licença de código aberto para promover a colaboração e a transparência no desenvolvimento. A escolha da licença é uma consideração importante para definir como outros podem usar, modificar e distribuir o software. Neste caso, recomenda-se a utilização de uma licença amplamente reconhecida, como a **Licença MIT**: </div>
-  
+O Sistema Educacional de Gestão Acadêmica é distribuído sob uma licença de código aberto para promover a colaboração e a transparência no desenvolvimento. A escolha da licença é uma consideração importante para definir como outros podem usar, modificar e distribuir o software. Neste caso, recomenda-se a utilização de uma licença amplamente reconhecida, como a **Licença MIT**: 
    * Licença MIT:
      - Permite o uso, modificação, distribuição e sublicenciamento, tanto para fins comerciais quanto não comerciais.
-
+     - Exige a inclusão do aviso de copyright e a renúncia de responsabilidade nas cópias ou partes substanciais do software.
 ## 9. Contribuições ao Projeto
-<div align="justify">
-O projeto incentiva ativamente a contribuição da comunidade para melhorar e expandir suas funcionalidades. Aqui estão algumas diretrizes e práticas relacionadas a contribuições: </div>
-
+O projeto incentiva ativamente a contribuição da comunidade para melhorar e expandir suas funcionalidades. Aqui estão algumas diretrizes e práticas relacionadas a contribuições:
    * Repositório Público
      - O código-fonte é hospedado em um repositório público (por exemplo, GitHub) para facilitar o acesso e a colaboração.
    * Política de Contribuição
@@ -94,13 +81,31 @@ O projeto incentiva ativamente a contribuição da comunidade para melhorar e ex
       - Adota uma política de versionamento semântico para facilitar a compreensão das mudanças e atualizações.
    * Código de Conduta
       - Estabelece um código de conduta para criar um ambiente colaborativo e inclusivo para todos os participantes.
-        
-<div align="justify">
+
+## 10. Recursos futuros do Projeto
+  * Faturamento e Pagamento:
+        - Permite fornecedores autenticados acessarem funcionalidades de faturamento.
+        - Possibilita a seleção de faturas pendentes, confirmação dos detalhes e registro de pagamento.
+        - Inclui a capacidade de cancelar faturas.
+  * Correção e interação por AI:
+        - Utilização de inteligência artificial para auxiliar no acompanhamento das atividades
+        dos alunos, bem como geração de tarefas com um estudo de respostas considerando os erros
+        em atividades anteriores, para gerar um relatório ao professor com estatísticas dos erros
+        e acertos de cada aluno. Facilitando o entendimento do corpo docente sobre a progressão de
+        cada aluno.
+
+
+
+Ela fornece uma visão abrangente do Sistema Educacional de Gestão Acadêmica, delineando suas principais funcionalidades, dados manipulados e a infraestrutura tecnológica subjacente. Ao adotar a linguagem de programação PHP, o banco de dados MySQL e ferramentas adicionais como HTML, CSS e JavaScript, o sistema busca oferecer uma experiência interativa e eficiente para professores, alunos e fornecedores.
+
+A arquitetura do sistema, baseada no modelo MVC, e as considerações de segurança destacam o compromisso com a organização, manutenção e proteção adequada dos dados sensíveis dos usuários. O desenvolvimento iterativo, testes regulares de segurança e a documentação contínua demonstram a busca por qualidade e durabilidade no ciclo de vida do projeto.
+
+A escolha da Licença MIT reflete a abertura do projeto à colaboração e transparência, permitindo seu uso em contextos comerciais e não comerciais, com requisitos claros de atribuição.
+
+As diretrizes para contribuições incentivam ativamente a participação da comunidade, estabelecendo práticas claras desde a hospedagem pública do código até a revisão de código e o agradecimento aos contribuidores. Essas práticas visam criar um ambiente colaborativo, inclusivo e inovador ao redor do projeto, promovendo a transparência e a evolução contínua.
+
+Em síntese, esta documentação serve como um guia robusto para o desenvolvimento do Sistema Educacional de Gestão Acadêmica, alinhado com as melhores práticas de desenvolvimento, segurança e colaboração. A sua atualização contínua é fundamental para refletir as mudanças no projeto, garantindo que os usuários e colaboradores estejam sempre bem informados e alinhados com as decisões mais recentes.
 
 Essas práticas ajudam a criar um ecossistema saudável ao redor do projeto, incentivando contribuições valiosas da comunidade e promovendo a transparência e a inovação contínua.
 
-Esta documentação serve como um guia inicial para o desenvolvimento do Sistema Educacional de Gestão Acadêmica, proporcionando uma visão geral das funcionalidades, tecnologias utilizadas e considerações importantes para o sucesso do projeto. Deve-se certificar a atualização deste documento conforme evolução do sistema.
-
-</div>
-
-
+Esta documentação serve como um guia inicial para o desenvolvimento do Sistema Educacional de Gestão Acadêmica, proporcionando uma visão geral das funcionalidades, tecnologias utilizadas e considerações importantes para o sucesso do projeto. Certifique-se de atualizar esta documentação conforme o projeto evolui e novas decisões são tomadas.
