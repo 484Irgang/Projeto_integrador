@@ -1,16 +1,34 @@
 # Sistema Educacional de Gestão Acadêmica
 
+# Participantes:
+* Documentação:
+  - Gabriel Lazarini Ramos;
+  - Hellen Caroline Vicchietti;
+  - Helison Ramos;
+* Protótipo:
+  - Tomaz Lima;
+  - Ícaro Quimaia;
+* Codificação:
+  - Guilherme Irgang;
+  - Erick Neri.
+
+# Instrução de uso para testes:
+ * Dados para login:
+   - Email: teste@outlook.com;
+   -  Senha: 12345678.
+
+
+
+
+
 ## 1. Visão Geral
 O Sistema Educacional de Gestão Acadêmica tem como objetivo facilitar a administração de atividades acadêmicas em uma instituição de ensino. Ele oferece funcionalidades relacionadas ao lançamento de notas, alocação em disciplinas, faturamento e pagamento, e checagem de notas, atendendo às necessidades de professores, fornecedores e alunos.
 ## 2. Funcionalidades Principais
-* Lançamento de Notas:
-  - Permite que professores autenticados insiram e validem notas para alunos em disciplinas específicas.
-  - Oferece a capacidade de cancelar o lançamento de notas.
-* Alocação em Disciplinas:
-  - Permite que professores escolham disciplinas que desejam ministrar, selecionem turmas disponíveis e sejam alocados para lecionar.
-* Checagem de Notas:
-  - Permite que alunos autenticados acessem suas notas em disciplinas específicas.
-  - Informa sobre a disponibilidade ou ausência de notas.
+  * Cadastro de login para usuário e administrador;
+  * Autenticação de usuário e administrador;
+  * Impressão dos dados em uma tela responsiva e dinâmica.
+
+
  ## 3. Dados Utilizados 
  * Professor:
    - Dados de autenticação (login, senha).
@@ -18,22 +36,7 @@ O Sistema Educacional de Gestão Acadêmica tem como objetivo facilitar a admini
  * Aluno:
    - Dados de autenticação (login, senha).
    - Dados pessoais (nome, ID).
- * Fornecedor:
-   - Dados de autenticação (login, senha).
-   - Dados da empresa (nome, ID).
- * Disciplina:
-   - Nome da disciplina.
-   - Código da disciplina.
- * Turma:
-   - Identificador da turma.
-   - Capacidade máxima de alunos.
- * Nota:
-   - Valor da nota.
-   - Status da nota (válida, inválida, em processamento).
- * Fatura:
-   - Número da fatura.
-   - Itens da fatura (produtos ou serviços).
-   - Status da fatura (pendente, paga, cancelada).
+
 ## 4. Tecnologias Utilizadas:
   * Linguagem de Programação:
     - PHP.
@@ -83,6 +86,14 @@ O projeto incentiva ativamente a contribuição da comunidade para melhorar e ex
       - Estabelece um código de conduta para criar um ambiente colaborativo e inclusivo para todos os participantes.
 
 ## 10. Recursos futuros do Projeto
+  * Lançamento de Notas:
+        - Permite que professores autenticados insiram e validem notas para alunos em disciplinas específicas.
+        - Oferece a capacidade de cancelar o lançamento de notas.
+  * Alocação em Disciplinas:
+        - Permite que professores escolham disciplinas que desejam ministrar, selecionem turmas disponíveis e sejam alocados para lecionar.
+  * Checagem de Notas:
+        - Permite que alunos autenticados acessem suas notas em disciplinas específicas.
+        - Informa sobre a disponibilidade ou ausência de notas.
   * Faturamento e Pagamento:
         - Permite fornecedores autenticados acessarem funcionalidades de faturamento.
         - Possibilita a seleção de faturas pendentes, confirmação dos detalhes e registro de pagamento.
@@ -95,7 +106,7 @@ O projeto incentiva ativamente a contribuição da comunidade para melhorar e ex
         cada aluno.
 
 
-
+ 
 Ela fornece uma visão abrangente do Sistema Educacional de Gestão Acadêmica, delineando suas principais funcionalidades, dados manipulados e a infraestrutura tecnológica subjacente. Ao adotar a linguagem de programação PHP, o banco de dados MySQL e ferramentas adicionais como HTML, CSS e JavaScript, o sistema busca oferecer uma experiência interativa e eficiente para professores, alunos e fornecedores.
 
 A arquitetura do sistema, baseada no modelo MVC, e as considerações de segurança destacam o compromisso com a organização, manutenção e proteção adequada dos dados sensíveis dos usuários. O desenvolvimento iterativo, testes regulares de segurança e a documentação contínua demonstram a busca por qualidade e durabilidade no ciclo de vida do projeto.
