@@ -14,11 +14,11 @@
  
 
 # Instrução de uso para testes:
- * Acesse o sistema clicando <a href="https://projetointegrador.up.railway.app">aqui</a>
+ * Acesse o sistema clicando <a href="https://projetointegrador.up.railway.app">AQUI</a>
  * Dados para login:
    - Email: teste@outlook.com;
    -  Senha: 12345678.
-
+ * Observações importantes: O provedor virtual escolhido foi o <a href="https://railway.app">Railway</a> para fazer o deploy da aplicação, o provedor forneceu serviços de servidor e banco de dados mas por um tempo limitado de créditos para teste e que não durará muito tempo, por esse motivo o sistema poderá não estar funcionando se a data escolhida para fazer os testes for muito distante apó a entrega do trabalho.
 
 
 
