@@ -8,11 +8,13 @@
 * Protótipo:
   - Tomaz Lima;
   - Ícaro Quimaia;
+  - Erick Neri;
 * Codificação:
   - Guilherme Irgang;
-  - Erick Neri.
+ 
 
 # Instrução de uso para testes:
+
  * Dados para login:
    - Email: teste@outlook.com;
    -  Senha: 12345678.
